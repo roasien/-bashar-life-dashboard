@@ -102,44 +102,120 @@ JOY
 </div>
 <script>
 const cards=[
+
 {
 level:"🌈 Joy",
 value:92,
 quote:"가장 설레는 한 걸음을 선택하세요. 그 한 걸음이 다음 길을 보여줍니다.",
-question:"오늘 내가 미룬 일 중 가장 설레는 행동은 무엇인가?"
+question:"오늘 내가 미뤄둔 일 중 가장 설레는 행동은 무엇인가?"
 },
+
 {
 level:"💛 Trust",
 value:78,
 quote:"불확실함은 가능성이 아직 형태를 갖추지 않은 공간입니다.",
-question:"내가 통제하려는 것을 하나 내려놓는다면?"
+question:"내가 통제하려는 것을 하나 내려놓는다면 무엇일까?"
 },
+
 {
 level:"💙 Flow",
 value:84,
-quote:"결과보다 지금의 에너지에 집중하세요.",
-question:"지금 이 순간 가장 자연스러운 행동은?"
+quote:"결과보다 지금의 에너지에 집중하세요. 흐름은 다음 순간을 자연스럽게 보여줍니다.",
+question:"지금 이 순간 가장 자연스러운 행동은 무엇인가?"
 },
+
 {
 level:"💜 Creation",
 value:98,
 quote:"당신은 현실을 경험하는 존재이자, 동시에 현실을 선택하는 존재입니다.",
 question:"오늘 어떤 현실을 선택하고 싶은가?"
 },
+
 {
 level:"🧡 Curiosity",
 value:66,
 quote:"판단 대신 호기심을 선택하면 새로운 문이 열립니다.",
 question:"오늘 무엇을 새롭게 바라볼 수 있을까?"
 },
+
 {
 level:"💚 Gratitude",
 value:88,
 quote:"감사는 이미 존재하는 풍요를 보게 하는 렌즈입니다.",
-question:"지금 감사할 수 있는 세 가지는?"
+question:"지금 감사할 수 있는 세 가지는 무엇인가?"
+},
+
+{
+level:"💜 Alignment",
+value:96,
+quote:"당신이 원하는 현실을 창조하려면 현실을 바꾸기 전에 당신의 진동과 먼저 조화를 이루세요.",
+question:"내가 원하는 현실의 사람이라면 지금 어떻게 행동할까?"
+},
+
+{
+level:"🔥 Excitement",
+value:99,
+quote:"설렘은 미래의 가능성이 현재의 당신에게 보내는 신호입니다.",
+question:"지금 가장 작은 설렘의 행동은 무엇인가?"
+},
+
+{
+level:"✨ Belief",
+value:75,
+quote:"현실은 당신의 믿음을 반영합니다. 믿음을 변화시키면 경험도 변화합니다.",
+question:"내가 내려놓고 싶은 오래된 믿음은 무엇인가?"
+},
+
+{
+level:"🌌 Synchronicity",
+value:90,
+quote:"우연처럼 보이는 사건들은 당신의 주파수와 현실이 만나는 순간입니다.",
+question:"오늘 발견한 의미 있는 연결은 무엇인가?"
+},
+
+{
+level:"🕊️ Allowance",
+value:82,
+quote:"저항을 내려놓으면 삶은 이미 존재하는 가능성을 보여주기 시작합니다.",
+question:"내가 더 허용할 수 있는 것은 무엇인가?"
+},
+
+{
+level:"💛 Trust Timing",
+value:86,
+quote:"모든 것은 가장 적절한 순간에 펼쳐집니다. 지연은 실패가 아니라 조율입니다.",
+question:"내가 믿고 기다릴 수 있는 것은 무엇인가?"
+},
+
+{
+level:"💚 Self Love",
+value:88,
+quote:"당신은 사랑받기 위해 변해야 하는 존재가 아닙니다. 당신은 이미 완전합니다.",
+question:"오늘 나 자신에게 줄 수 있는 사랑은 무엇인가?"
+},
+
+{
+level:"🌱 Transformation",
+value:93,
+quote:"변화는 새로운 존재가 되는 것이 아니라 이미 존재하는 진짜 자신을 허용하는 과정입니다.",
+question:"나는 어떤 나를 더 표현하고 싶은가?"
+},
+
+{
+level:"🌟 Permission",
+value:94,
+quote:"당신이 원하는 현실로 이동하는 가장 강력한 도구는 자신에게 허락하는 것입니다.",
+question:"나는 무엇을 더 자유롭게 허락할 수 있을까?"
+},
+
+{
+level:"🌈 Authenticity",
+value:97,
+quote:"진짜 자신으로 존재할 때 당신의 에너지는 가장 강력한 창조력이 됩니다.",
+question:"오늘 어디에서 더 진짜 나답게 표현할 수 있을까?"
 }
-];
-function nextCard(){
+
+];function nextCard(){
 const c=cards[Math.floor(Math.random()*cards.length)];
 document.getElementById("quote").innerHTML="“"+c.quote+"”";
 document.getElementById("question").innerHTML="<b>오늘의 질문</b><br><br>"+c.question;
