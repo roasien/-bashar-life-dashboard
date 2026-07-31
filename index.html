@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Life Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Pretendard,sans-serif;}
+body{
+background:#f5f7fb;display:flex;justify-content:center;align-items:center;height:100vh;
+}
+.card{
+width:420px;background:white;border-radius:28px;padding:30px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+.title{
+font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:5px;
+}
+.subtitle{
+color:#888;margin-bottom:28px;
+}
+.gauge{
+height:18px;border-radius:999px;
+background:linear-gradient(90deg,
+#ff5c5c,#ffb84d,#ffe45e,#8dd96b,#49c7f5,#6a8dff,#9f6bff
+);
+position:relative;
+}
+.pointer{
+position:absolute;
+top:-8px;
+width:8px;height:34px;
+background:#222;border-radius:99px;
+transition:.6s;
+}
+.level{
+margin-top:14px;font-size:18px;font-weight:700;
+}
+.quote{
+margin-top:30px;
+padding:22px;
+border-radius:20px;
+background:#fafafa;
+font-size:22px;line-height:1.6;
+font-weight:600;
+min-height:150px;
+display:flex;align-items:center;
+}
+.question{
+margin-top:24px;
+padding:18px;
+background:#f3f7ff;
+border-radius:18px;
+color:#444;
+line-height:1.6;
+}
+button{
+margin-top:26px;
+width:100%;
+padding:16px;
+border:none;
+border-radius:16px;
+background:black;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.25s;
+}
+button:hover{
+transform:translateY(-2px);
+}
+.footer{
+margin-top:20px;
+text-align:center;
+font-size:12px;
+color:#999;
+}
+</style>
+</head><body>
+<div class="card">
+<div class="title">
+✨ LIFE DASHBOARD
+</div>
+<div class="subtitle">
+Follow your highest excitement.
+</div>
+<div class="gauge">
+<div class="pointer" id="pointer"></div>
+</div>
+<div class="level" id="level">
+JOY
+</div>
+<div class="quote" id="quote">
+...
+</div>
+<div class="question" id="question">
+...
+</div>
+<button onclick="nextCard()">
+새로운 메시지
+</button>
+<div class="footer">
+당신의 선택이 오늘의 경험을 만들어 갑니다.
+</div>
+</div>
+<script>
+const cards=[
+{
+level:"🌈 Joy",
+value:92,
+quote:"가장 설레는 한 걸음을 선택하세요. 그 한 걸음이 다음 길을 보여줍니다.",
+question:"오늘 내가 미룬 일 중 가장 설레는 행동은 무엇인가?"
+},
+{
+level:"💛 Trust",
+value:78,
+quote:"불확실함은 가능성이 아직 형태를 갖추지 않은 공간입니다.",
+question:"내가 통제하려는 것을 하나 내려놓는다면?"
+},
+{
+level:"💙 Flow",
+value:84,
+quote:"결과보다 지금의 에너지에 집중하세요.",
+question:"지금 이 순간 가장 자연스러운 행동은?"
+},
+{
+level:"💜 Creation",
+value:98,
+quote:"당신은 현실을 경험하는 존재이자, 동시에 현실을 선택하는 존재입니다.",
+question:"오늘 어떤 현실을 선택하고 싶은가?"
+},
+{
+level:"🧡 Curiosity",
+value:66,
+quote:"판단 대신 호기심을 선택하면 새로운 문이 열립니다.",
+question:"오늘 무엇을 새롭게 바라볼 수 있을까?"
+},
+{
+level:"💚 Gratitude",
+value:88,
+quote:"감사는 이미 존재하는 풍요를 보게 하는 렌즈입니다.",
+question:"지금 감사할 수 있는 세 가지는?"
+}
+];
+function nextCard(){
+const c=cards[Math.floor(Math.random()*cards.length)];
+document.getElementById("quote").innerHTML="“"+c.quote+"”";
+document.getElementById("question").innerHTML="<b>오늘의 질문</b><br><br>"+c.question;
+document.getElementById("level").innerHTML=c.level;
+document.getElementById("pointer").style.left=c.value+"%";
+}
+nextCard();
+</script>
+</body></html>
