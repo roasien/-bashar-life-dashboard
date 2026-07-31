@@ -19,10 +19,23 @@ font-family:Pretendard,sans-serif;
 body{
 
 background:
-radial-gradient(circle at top,#302060,#080812);
+linear-gradient(
+rgba(5,8,25,.65),
+rgba(5,8,25,.85)
+),
+url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
 min-height:100vh;
@@ -30,25 +43,20 @@ min-height:100vh;
 color:white;
 
 }
-
 .card{
 
-width:420px;
-
 background:
-rgba(255,255,255,0.08);
+rgba(10,15,40,.55);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
 
-border:1px solid rgba(255,255,255,.15);
-
-border-radius:28px;
-
-padding:30px;
+border:
+1px solid rgba(255,255,255,.18);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,.5);
 
+0 0 50px rgba(120,80,255,.25),
+0 20px 60px rgba(0,0,0,.7);
 }
 
 .title{
