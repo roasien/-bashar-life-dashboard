@@ -9,425 +9,286 @@
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Pretendard,sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pretendard, sans-serif;
 }
 
-body{
-
-background:
-
-linear-gradient(
-rgba(5,8,25,.55),
-rgba(5,8,25,.75)
-),
-
-url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
-
-background-size:cover;
-
-background-position:center;
-
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background:
+    linear-gradient(rgba(5, 8, 25, .55), rgba(5, 8, 25, .75)),
+    url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
+  background-size: cover;
+  background-position: center;
 }
 
-.card{
-
-width:420px;
-
-background:
-rgba(255,255,255,0.08);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.15);
-
-border-radius:28px;
-
-padding:30px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.5);
-
+/* 카드 폭 축소: 420px -> 350px */
+.card {
+  width: 100%;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .5);
 }
 
-.title{
-
-font-size:28px;
-font-weight:700;
-
-letter-spacing:-1px;
-
-color:white;
-
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: white;
 }
 
-.subtitle{
-
-color:#c4bddc;
-
-margin-top:5px;
-
-margin-bottom:28px;
-
+.subtitle {
+  color: #c4bddc;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 20px;
 }
 
-.gauge{
-
-height:18px;
-
-border-radius:999px;
-
-background:
-linear-gradient(
-90deg,
-#ff5c5c,
-#ffb84d,
-#ffe45e,
-#8dd96b,
-#49c7f5,
-#6a8dff,
-#9f6bff
-);
-
-box-shadow:
-0 0 20px rgba(159,107,255,.6);
-
-position:relative;
-
+/* 게이지 두께 축소: 18px -> 12px */
+.gauge {
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #ff5c5c,
+    #ffb84d,
+    #ffe45e,
+    #8dd96b,
+    #49c7f5,
+    #6a8dff,
+    #9f6bff
+  );
+  box-shadow: 0 0 15px rgba(159, 107, 255, .5);
+  position: relative;
 }
 
-.pointer{
-
-position:absolute;
-
-top:-8px;
-
-width:8px;
-
-height:34px;
-
-background:white;
-
-border-radius:99px;
-
-box-shadow:
-0 0 15px white;
-
-transition:.6s;
-
+.pointer {
+  position: absolute;
+  top: -6px;
+  width: 6px;
+  height: 24px;
+  background: white;
+  border-radius: 99px;
+  box-shadow: 0 0 10px white;
+  transition: .6s;
+  transform: translateX(-50%);
 }
 
-.level{
-
-margin-top:18px;
-
-font-size:21px;
-
-font-weight:700;
-
+.level {
+  margin-top: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
 }
 
-.level-desc{
-
-margin-top:8px;
-
-font-size:14px;
-
-line-height:1.5;
-
-color:#c7c2d8;
-
+.level-desc {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #c7c2d8;
+  font-weight: 400;
 }
 
-.quote{
-
-margin-top:28px;
-
-padding:22px;
-
-border-radius:20px;
-
-background:
-rgba(255,255,255,.08);
-
-border:
-1px solid rgba(255,255,255,.12);
-
-font-size:21px;
-
-line-height:1.6;
-
-font-weight:600;
-
-min-height:150px;
-
-display:flex;
-
-align-items:center;
-
-color:white;
-
+/* 박스들 내부 패딩 및 최소 높이 축소 */
+.quote {
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .12);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
-.question{
-
-margin-top:20px;
-
-padding:18px;
-
-background:
-rgba(73,199,245,.12);
-
-border-radius:18px;
-
-border:
-1px solid rgba(73,199,245,.2);
-
-color:#e8e5ff;
-
-line-height:1.6;
-
+.question {
+  margin-top: 12px;
+  padding: 13px;
+  background: rgba(73, 199, 245, .12);
+  border-radius: 14px;
+  border: 1px solid rgba(73, 199, 245, .2);
+  color: #e8e5ff;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-.action{
-
-margin-top:18px;
-
-padding:18px;
-
-background:
-rgba(255,228,94,.12);
-
-border-radius:18px;
-
-border:
-1px solid rgba(255,228,94,.2);
-
-color:#fff6c7;
-
-line-height:1.6;
-
+.action {
+  margin-top: 10px;
+  padding: 13px;
+  background: rgba(255, 228, 94, .12);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 228, 94, .2);
+  color: #fff6c7;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-button{
-
-margin-top:24px;
-
-width:100%;
-
-padding:16px;
-
-border:none;
-
-border-radius:16px;
-
-background:white;
-
-color:#111;
-
-font-size:16px;
-
-cursor:pointer;
-
-font-weight:600;
-
-transition:.25s;
-
+button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: #111;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .25s;
 }
 
-button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:
-0 10px 30px rgba(255,255,255,.2);
-
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, .2);
 }
 
-.footer{
-
-margin-top:20px;
-
-text-align:center;
-
-font-size:12px;
-
-color:#aaa5bd;
-
+.footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: #aaa5bd;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="card">
+  <div class="title">✨ LIFE DASHBOARD</div>
+  <div class="subtitle">Follow your highest excitement.</div>
 
-<div class="title">
-✨ LIFE DASHBOARD
-</div>
+  <div class="gauge">
+    <div class="pointer" id="pointer"></div>
+  </div>
 
-<div class="subtitle">
-Follow your highest excitement.
-</div>
+  <div class="level" id="level">...</div>
+  <div class="quote" id="quote">...</div>
+  <div class="question" id="question">...</div>
+  <div class="action" id="action">...</div>
 
-<div class="gauge">
+  <button onclick="nextCard()">새로운 메시지</button>
 
-<div class="pointer" id="pointer"></div>
-
-</div>
-
-<div class="level" id="level">
-...
-</div>
-
-<div class="quote" id="quote">
-...
-</div>
-
-<div class="question" id="question">
-...
-</div>
-
-<div class="action" id="action">
-...
-</div>
-
-<button onclick="nextCard()">
-새로운 메시지
-</button>
-
-<div class="footer">
-당신의 선택이 오늘의 경험을 만들어 갑니다.
-</div>
-
+  <div class="footer">당신의 선택이 오늘의 경험을 만들어 갑니다.</div>
 </div>
 
 <script>
-
-const cards=[
-
-{
-level:"🌑 Resistance",
-value:25,
-desc:"저항을 발견하는 단계. 변화는 저항을 없애는 것이 아니라 알아차리는 것에서 시작됩니다.",
-quote:"당신이 밀어내는 것은 계속해서 당신의 주의를 요구합니다. 바라보고 허용하는 순간 새로운 선택이 나타납니다.",
-question:"지금 내가 저항하고 있는 것은 무엇인가?",
-action:"그 감정을 판단하지 말고 잠시 바라보기."
-},
-
-{
-level:"🌱 Awareness",
-value:45,
-desc:"자신의 생각과 믿음을 관찰하기 시작하는 단계입니다.",
-quote:"당신은 생각을 경험하는 존재이지, 생각 그 자체가 아닙니다.",
-question:"나는 어떤 생각을 반복하고 있는가?",
-action:"반복되는 생각 하나를 새로운 관점으로 바라보기."
-},
-
-{
-level:"💛 Trust",
-value:70,
-desc:"삶의 흐름과 타이밍을 신뢰하는 단계입니다.",
-quote:"불확실함은 빈 공간이 아니라 아직 펼쳐지지 않은 가능성의 공간입니다.",
-question:"내가 내려놓고 신뢰할 수 있는 것은 무엇인가?",
-action:"결과에 대한 집착 하나 내려놓기."
-},
-
-{
-level:"💙 Flow",
-value:82,
-desc:"행동과 에너지가 자연스럽게 정렬되는 단계입니다.",
-quote:"가장 설레는 방향으로 움직일 때 다음 단계는 자연스럽게 나타납니다.",
-question:"지금 가장 자연스럽게 끌리는 행동은 무엇인가?",
-action:"작은 설렘 하나 바로 실행하기."
-},
-
-{
-level:"💜 Alignment",
-value:94,
-desc:"자신의 진동과 원하는 경험이 조화를 이루는 단계입니다.",
-quote:"현실을 바꾸기 전에 현실을 경험하는 자신의 에너지를 먼저 조율하세요.",
-question:"원하는 현실의 나는 오늘 어떻게 행동할까?",
-action:"미래의 나와 일치하는 선택 하나 하기."
-},
-
-{
-level:"🌈 Joy",
-value:100,
-desc:"존재 자체의 기쁨과 창조성이 흐르는 상태입니다.",
-quote:"기쁨은 목적지가 아니라 당신이 존재하는 방식입니다.",
-question:"나는 지금 무엇을 통해 살아있음을 느끼는가?",
-action:"가장 높은 설렘의 행동을 선택하기."
-},
-
-{
-level:"💜 Creation",
-value:97,
-desc:"자신이 경험의 공동 창조자임을 인식하는 단계입니다.",
-quote:"당신은 현실에 반응하는 존재가 아니라 현실과 함께 창조하는 존재입니다.",
-question:"나는 어떤 경험을 선택하고 있는가?",
-action:"원하는 경험과 일치하는 에너지를 표현하기."
-},
-
-{
-level:"🌌 Synchronicity",
-value:90,
-desc:"삶의 연결성과 의미 있는 우연을 인식하는 단계입니다.",
-quote:"동시성은 당신과 현실이 같은 주파수에서 대화하는 방식입니다.",
-question:"오늘 나에게 오는 신호는 무엇인가?",
-action:"의미 있게 느껴지는 연결을 기록하기."
-},
-
-{
-level:"🔥 Excitement",
-value:99,
-desc:"가장 높은 설렘을 따라 창조하는 상태입니다.",
-quote:"설렘은 미래의 가능성이 현재의 당신에게 보내는 신호입니다.",
-question:"지금 가장 설레는 작은 행동은 무엇인가?",
-action:"5분 안에 할 수 있는 설렘의 행동 시작하기."
-},
-
-{
-level:"💚 Gratitude",
-value:88,
-desc:"이미 존재하는 풍요를 인식하는 상태입니다.",
-quote:"감사는 부족함에서 풍요로 시선을 이동시키는 힘입니다.",
-question:"지금 감사할 수 있는 세 가지는 무엇인가?",
-action:"오늘의 풍요 세 가지 적어보기."
-}
-
+const cards = [
+  {
+    level: "🌑 Resistance",
+    value: 25,
+    desc: "저항을 발견하는 단계. 변화는 저항을 없애는 것이 아니라 알아차리는 것에서 시작됩니다.",
+    quote: "당신이 밀어내는 것은 계속해서 당신의 주의를 요구합니다. 바라보고 허용하는 순간 새로운 선택이 나타납니다.",
+    question: "지금 내가 저항하고 있는 것은 무엇인가?",
+    action: "그 감정을 판단하지 말고 잠시 바라보기."
+  },
+  {
+    level: "🌱 Awareness",
+    value: 45,
+    desc: "자신의 생각과 믿음을 관찰하기 시작하는 단계입니다.",
+    quote: "당신은 생각을 경험하는 존재이지, 생각 그 자체가 아닙니다.",
+    question: "나는 어떤 생각을 반복하고 있는가?",
+    action: "반복되는 생각 하나를 새로운 관점으로 바라보기."
+  },
+  {
+    level: "💛 Trust",
+    value: 70,
+    desc: "삶의 흐름과 타이밍을 신뢰하는 단계입니다.",
+    quote: "불확실함은 빈 공간이 아니라 아직 펼쳐지지 않은 가능성의 공간입니다.",
+    question: "내가 내려놓고 신뢰할 수 있는 것은 무엇인가?",
+    action: "결과에 대한 집착 하나 내려놓기."
+  },
+  {
+    level: "💙 Flow",
+    value: 82,
+    desc: "행동과 에너지가 자연스럽게 정렬되는 단계입니다.",
+    quote: "가장 설레는 방향으로 움직일 때 다음 단계는 자연스럽게 나타납니다.",
+    question: "지금 가장 자연스럽게 끌리는 행동은 무엇인가?",
+    action: "작은 설렘 하나 바로 실행하기."
+  },
+  {
+    level: "💜 Alignment",
+    value: 94,
+    desc: "자신의 진동과 원하는 경험이 조화를 이루는 단계입니다.",
+    quote: "현실을 바꾸기 전에 현실을 경험하는 자신의 에너지를 먼저 조율하세요.",
+    question: "원하는 현실의 나는 오늘 어떻게 행동할까?",
+    action: "미래의 나와 일치하는 선택 하나 하기."
+  },
+  {
+    level: "🌈 Joy",
+    value: 100,
+    desc: "존재 자체의 기쁨과 창조성이 흐르는 상태입니다.",
+    quote: "기쁨은 목적지가 아니라 당신이 존재하는 방식입니다.",
+    question: "나는 지금 무엇을 통해 살아있음을 느끼는가?",
+    action: "가장 높은 설렘의 행동을 선택하기."
+  },
+  {
+    level: "💜 Creation",
+    value: 97,
+    desc: "자신이 경험의 공동 창조자임을 인식하는 단계입니다.",
+    quote: "당신은 현실에 반응하는 존재가 아니라 현실과 함께 창조하는 존재입니다.",
+    question: "나는 어떤 경험을 선택하고 있는가?",
+    action: "원하는 경험과 일치하는 에너지를 표현하기."
+  },
+  {
+    level: "🌌 Synchronicity",
+    value: 90,
+    desc: "삶의 연결성과 의미 있는 우연을 인식하는 단계입니다.",
+    quote: "동시성은 당신과 현실이 같은 주파수에서 대화하는 방식입니다.",
+    question: "오늘 나에게 오는 신호는 무엇인가?",
+    action: "의미 있게 느껴지는 연결을 기록하기."
+  },
+  {
+    level: "🔥 Excitement",
+    value: 99,
+    desc: "가장 높은 설렘을 따라 창조하는 상태입니다.",
+    quote: "설렘은 미래의 가능성이 현재의 당신에게 보내는 신호입니다.",
+    question: "지금 가장 설레는 작은 행동은 무엇인가?",
+    action: "5분 안에 할 수 있는 설렘의 행동 시작하기."
+  },
+  {
+    level: "💚 Gratitude",
+    value: 88,
+    desc: "이미 존재하는 풍요를 인식하는 상태입니다.",
+    quote: "감사는 부족함에서 풍요로 시선을 이동시키는 힘입니다.",
+    question: "지금 감사할 수 있는 세 가지는 무엇인가?",
+    action: "오늘의 풍요 세 가지 적어보기."
+  }
 ];
 
-function nextCard(){
+let lastIndex = -1;
 
-const c=cards[Math.floor(Math.random()*cards.length)];
+function nextCard() {
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * cards.length);
+  } while (randomIndex === lastIndex && cards.length > 1);
 
-document.getElementById("quote").innerHTML=
-"“"+c.quote+"”";
+  lastIndex = randomIndex;
+  const c = cards[randomIndex];
 
-document.getElementById("question").innerHTML=
-"<b>오늘의 질문</b><br><br>"+c.question;
-
-document.getElementById("action").innerHTML=
-"<b>✨ 오늘의 행동</b><br><br>"+c.action;
-
-document.getElementById("level").innerHTML=
-c.level+
-"<div class='level-desc'>"+
-c.desc+
-"</div>";
-
-document.getElementById("pointer").style.left=
-c.value+"%";
-
+  document.getElementById("quote").innerHTML = "“" + c.quote + "”";
+  document.getElementById("question").innerHTML = "<b>오늘의 질문</b><br><br>" + c.question;
+  document.getElementById("action").innerHTML = "<b>✨ 오늘의 행동</b><br><br>" + c.action;
+  document.getElementById("level").innerHTML = c.level + "<div class='level-desc'>" + c.desc + "</div>";
+  document.getElementById("pointer").style.left = c.value + "%";
 }
 
 nextCard();
-
 </script>
 
 </body>
